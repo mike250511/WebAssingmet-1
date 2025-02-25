@@ -9,7 +9,7 @@
         console.log("User is imported :", user);
 
         const userBooksDBName=`books_${user.uid}`;
-        //------------------------------------------------------------
+        //-----------------------------------------------------------
         const booksCollectionRef = collection(db, userBooksDBName); //collection(db, 'users', `${user.uid}`, 'books')
         
         export const addBookToFirebase = async (book) => {
