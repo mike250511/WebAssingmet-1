@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Log</title>
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Firebase v9+ SDK via CDN -->
+<script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Book Log</h1>
+            <button id="signOutBtn">SignOut</button>
+        </header>
+        <main class="container">
+            <div class="filter-container">
+                <input type="text" id="title" name="title" placeholder="Filter by title" oninput="handleFilterChange(event)">
+                <input type="text" id="author" name="author" placeholder="Filter by author" oninput="handleFilterChange(event)">
+                <input type="text" id="genre" name="genre" placeholder="Filter by genre" oninput="handleFilterChange(event)">
+                <input type="text" id="rating" name="rating" placeholder="Filter by rating" oninput="handleFilterChange(event)">
+                <div id="filter-buttons">
+                    <button id="apply-filter">Apply Filter</button>
+                    <button id="clear-fields">Clear Fields</button>
+                </div>
+            </div>
+            <form id="book-form">
+                <input type="text" id="book-title" placeholder="Book Title">
+                <input type="text" id="book-author" placeholder="Author">
+                <input type="text" id="book-genre" placeholder="Genre">
+                <input type="text" id="book-rating" placeholder="Rating">
+
+                <button id="add-btn">Add Book</button>
+            </form>
+            <ul id="book-list"></ul>
+            <div id="chatbot-container">
+                <div id="chat-history"></div>
+                <input type="text" id="chat-input" placeholder="Ask the chatbot...">
+                <button id="send-btn">Send</button>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- <script type="module" src="booklog/js/fireBaseConfig.js"></script>
+    <script type="module" src="booklog/js/auth.js"></script>
+    <script type="module" src="booklog/js/firebase.js"></script> -->
+    <!-- <script type="module" src="booklog/js/fireBaseConfig.js"></script>
+    <script type="module" src="booklog/js/auth.js"></script> -->
+    <script type="module" src="booklog/js/auth.js"></script>
+    <script type="module" src="booklog/js/app.js"></script>
+</body>
+</html>
