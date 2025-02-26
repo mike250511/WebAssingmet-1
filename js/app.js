@@ -2,7 +2,7 @@
         console.log("app.js is running");
         import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
         import { db } from "./fireBaseConfig.js";
-        import apiKey from "./api.js";
+        // import apiKey from "./api.js";
         import { getUser } from "./auth.js";
 
         const user = await getUser();
@@ -98,10 +98,16 @@
 
             let aiInput = document.getElementById("chat-input").value;
             
-            message = message + aiInput;
+            message += aiInput;
 
             console.log("Message : " + message);
 
+            const apiKey = await getApiKey(); // Call getApiKey to fetch the API key from Firebase
+            if (!apiKey) {
+                console.error("Error: API key is missing.");
+                appendMessage("Error: Unable to fetch API key.");
+                return; // Return early if the API key is not available
+            }
 
             const fetchAIResponse = async (apiKey, message) => {
 
