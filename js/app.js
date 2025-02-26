@@ -2,7 +2,6 @@
         console.log("app.js is running");
         import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
         import { db } from "./fireBaseConfig.js";
-        // import apiKey from "./api.js";
         import { getUser } from "./auth.js";
 
         const user = await getUser();

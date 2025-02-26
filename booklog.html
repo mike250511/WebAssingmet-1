@@ -13,12 +13,15 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header style="display: flex; justify-content: space-between; align-items: center; background-color: #328cec; padding: 1rem;">
             <h1>Book Log</h1>
-            <button id="signOutBtn">SignOut</button>
+            <button id="signOutBtn" style="padding: 10px 20px; background-color: #dc3545; color: white; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer;">
+                SignOut
+            </button>
         </header>
         <main class="container">
             <div class="filter-container">
+                <h2>Filter Books</h2>
                 <input type="text" id="title" name="title" placeholder="Filter by title" oninput="handleFilterChange(event)">
                 <input type="text" id="author" name="author" placeholder="Filter by author" oninput="handleFilterChange(event)">
                 <input type="text" id="genre" name="genre" placeholder="Filter by genre" oninput="handleFilterChange(event)">
@@ -29,6 +32,7 @@
                 </div>
             </div>
             <form id="book-form">
+                <h2>Add a new book</h2>
                 <input type="text" id="book-title" placeholder="Book Title">
                 <input type="text" id="book-author" placeholder="Author">
                 <input type="text" id="book-genre" placeholder="Genre">
