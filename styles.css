@@ -248,3 +248,10 @@ button:hover {
 #clear-fields:hover {
     background-color: darkred; /* Dark red on hover */
 }
+
+#signIn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
