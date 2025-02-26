@@ -83,23 +83,25 @@
         };
 
 
+        let aiInput = document.getElementById("chat-input");
+
+        let aiInstructions = `
+            If you askked about adding new book - send me response in JSON using following format (give rating 5 as default in string format):
+            {
+                "response": "book",
+                "name": "<book title>",
+                "author": "<author>",
+                "genre": "<genre>",
+                "rating": "<rating>"
+            }
+            `;
+    
         const handleAiChatBot = async () => {
             console.log("Send button clicked");
 
-            let aiInput = document.getElementById("chat-input").value;
-
-            let message = `
-                If you askked about adding new book - send me response in JSON using following format (give rating 5 as default in string format):
-                {
-                    "response": "book",
-                    "name": "<book title>",
-                    "author": "<author>",
-                    "genre": "<genre>",
-                    "rating": "<rating>"
-                }
-                `;
+            const userMessage = aiInput.value;
             
-            message += aiInput;
+            let message = aiInstructions + userMessage;
 
             console.log("Message : " + message);
 
@@ -368,7 +370,6 @@
             });
         };
 
-        let aiInput = document.getElementById("chat-input");
         aiInput.addEventListener("keypress", (event) => {
             if(event.key === "Enter") {
                 console.log("Enter button was pressed");
