@@ -13,7 +13,8 @@ body {
 
 /* Header Styles */
 header {
-    text-align: center;
+    display: flex; /* Make header a flex container */
+    align-items: center; /* Vertically center items */
     margin-bottom: 30px;
     background-color: #328cec;
     padding: 1rem;
