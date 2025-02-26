@@ -82,7 +82,13 @@
             }
         };
 
-        let message = `
+
+        const handleAiChatBot = async () => {
+            console.log("Send button clicked");
+
+            let aiInput = document.getElementById("chat-input").value;
+
+            let message = `
                 If you askked about adding new book - send me response in JSON using following format (give rating 5 as default in string format):
                 {
                     "response": "book",
@@ -92,11 +98,6 @@
                     "rating": "<rating>"
                 }
                 `;
-
-        const handleAiChatBot = async () => {
-            console.log("Send button clicked");
-
-            let aiInput = document.getElementById("chat-input").value;
             
             message += aiInput;
 
