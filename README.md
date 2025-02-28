@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# wcag
-=======
 # Book Log App
 ## Description
 This app is a tool for organizing read books with a simple, user-friendly desing. It allows users to easily track and categorize books they've read.
@@ -22,4 +19,3 @@ Authentication based on OAuth 2 with Google as only provider.
 
 ## ChatBot integration
 Gemeni AI used with model of gemini-1.5-flash.
->>>>>>> master
