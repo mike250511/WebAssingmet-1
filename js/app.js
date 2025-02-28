@@ -207,14 +207,13 @@
                     const bookItem = document.createElement('li');
                     bookItem.innerHTML = `
                         <div class="container">
-                            <div>
+                            <div class="list-container">
                                 <span class="book-title">${book.title}</span>
-                                <span>written by</span>
-                                <span class="book-author"> ${book.author}</span>
-                                <span class="book-genre">(${book.genre})</span>
+                                <span class="book-author"> Author: ${book.author}</span>
+                                <span class="book-genre">Genre: ${book.genre}</span>
                                 <span class="book-rating">Rating: ${book.rating}</span>
                             </div>
-                            <div>
+                            <div class="button-container">
                                 <button class="delete-btn">Delete</button>
                                 <button class="edit-btn">Edit</button>
                             </div>

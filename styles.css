@@ -8,14 +8,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    /* padding: 20px; */
 }
 
 /* Header Styles */
 header {
     display: flex; /* Make header a flex container */
     align-items: center; /* Vertically center items */
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     background-color: #328cec;
     padding: 1rem;
 }
@@ -25,22 +24,45 @@ header h1 {
     color: #333;
 }
 
+/* color: #4dd1ab; */
 
-
-/* Main Container (Center all sections) */
-main.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+h2 {
+    color: #18af83;
+    font-weight:300;
 }
+
+/* Sign Out Button */
+#signOutBtn {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signOutBtn:hover {
+    background-color: #c82333;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row; /* Set to row to align the forms and book list side by side */
+    gap: 20px;
+    padding: 20px;
+    min-height: 100%;
+    max-width: 1200px;
+}
+
+
 
 /* Filter Section */
 .filter-container {
     display: flex;
     flex-direction: column;  /* Ensure inputs are displayed in column */
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 20px;
     width: 300px; /* Ensure consistent width */
     align-items: center;
@@ -49,20 +71,37 @@ main.container {
 .filter-container input {
     padding: 10px;
     font-size: 1rem;
-    width: 100%; /* Make input take full width of the container */
+    width: 100%;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
 .filter-container button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
+#filter-buttons button:first-child {
+    background-color: #007bff;
+}
+
+#filter-buttons button:last-child {
+    background-color: #f41f34;
+}
+
+#filter-buttons {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-evenly !important;
+    width: 100%;
+}
+
+
 
 .filter-container button:hover {
     background-color: #0056b3;
@@ -105,32 +144,28 @@ main.container {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    /* width: 80%; */
-    max-width: 800px;
+    width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 #book-list li {
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    padding: 15px;
+    background-color:   white;
+    border: 1px solid #ccc;
     margin: 10px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     width: 500px;
 }
 
 #book-list li div {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 /* #book-list li div span.book-title,
@@ -140,23 +175,36 @@ main.container {
 } */
 #book-list li div span {
     margin-right: 10px;
+    font-size: 16px;
+    color: black;
 }
 
 /* #book-list li div>:first-child {
     justify-content: space-between;
 } */
 
+.button-container {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
 
+.button-container button:first-child {
+    background-color: #52494a !important;
+}
 
 #book-list li button {
     padding: 5px 10px;
-    background-color: #dc3545;
+    background-color: #f41f34;
     color: white;
     font-size: 0.875rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 5px;
+    width: 60px;
 }
 
 #book-list li button:hover {
@@ -179,12 +227,29 @@ rgba(0, 0, 0, 0.1);
 }
 
 #chat-history {
-    height: 200px;
+    height: 100px;
     overflow-y: auto;
     border-bottom: 1px solid 
 #ccc;
     margin-bottom: 10px;
     padding: 5px;
+}
+
+/* Placeholder styling using ::before */
+#chat-history::before {
+    content: "No messages yet...";
+    color: #aaa; /* Placeholder color */
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Hide placeholder text when there is content inside #chat-history */
+#chat-history:empty::before {
+    display: block;
 }
 
 #chat-input {
@@ -196,6 +261,7 @@ rgba(0, 0, 0, 0.1);
 #send-btn {
     padding: 5px 10px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 .history {
@@ -203,7 +269,7 @@ rgba(0, 0, 0, 0.1);
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #007bff;
     color: white;
     font-size: 1rem;
@@ -216,43 +282,76 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Ensure the filter buttons are displayed in a row */
-#filter-buttons {
-    display: flex;  /* Align the buttons horizontally */
-    gap: 10px;  /* Add some space between the buttons */
-    margin-top: 10px;  /* Add some margin on top for spacing */
-    justify-content: center; /* Center align the buttons */
+#forms-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
 }
 
-/* Style for the "Apply Filter" button (Blue background) */
-#filter-buttons button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: auto; /* Ensure the button width fits the content */
+/* Book List Styles */
+#book-list {
+    list-style: none;
+    margin-left: 20px;
+    text-align: left;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    flex-grow: 1;
 }
 
-#filter-buttons button:hover {
-    background-color: #0056b3;
+#book-list-container {
+    display: flex;
+    flex-direction: column; /* Stack the book list and header vertically */
+    gap: 10px; /* Add a little space between the book list and the header */
+    margin-right: 300px;
 }
 
-/* Style for the "Clear Fields" button (Red background) */
-#clear-fields {
-    background-color: red; /* Red background */
-    color: white; /* Text color */
+
+
+#book-list-container h2 {
+    margin-left: 40px;
+    color: #18af83;
+    font-weight: 300;
+
 }
 
-#clear-fields:hover {
-    background-color: darkred; /* Dark red on hover */
-}
-
-#signIn-container {
+.list-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
+
+.list-container span:first-child {
+    font-size: 30px !important;
+    font-weight: bold;
+    color: #7a7a7a !important;
+}
+
+.list-container span:not(:first-child) {
+    color: #898383 !important;
+}
+
+/* #book-list li {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+} */
+
+/* #book-list {
+    list-style: none;
+    padding: 20px;
+    margin-left: 20px; 
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex: 2; 
+} */
