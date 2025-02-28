@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; 
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers content vertically */
+            align-items: center; /* Centers content horizontally */
+            flex-grow: 1; /* Allow main to take remaining space */
+        }
+
+        /* Style the button */
+        #sign-in {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #sign-in:hover {
+            background-color: #357AE8;
+        }
+
+        #sign-in-label {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Log</h1>
+    </header>
+    <main>
+        <label for="sign-in" id="sign-in-label">Sign In with Google</label>
+        <br>
+        <button id="sign-in">Sign In</button>
+    </main>
+    <script type="module" src="js/sign-in.js"></script>
+</body>
+</html>

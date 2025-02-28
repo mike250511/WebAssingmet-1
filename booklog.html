@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Log</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase v9+ SDK via CDN -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header style="display: flex; justify-content: space-between; align-items: center; background-color: #328cec; padding: 1rem;">
+            <h1>Book Log</h1>
+            <button id="signOutBtn" style="padding: 10px 20px; background-color: #dc3545; color: white; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer;">
+                SignOut
+            </button>
+        </header>
+        <main class="container">
+            <!-- <ul id="book-list"></ul>
+            <h2>There are books:</h2> -->
+            <div id="book-list-container">
+                <h2>These are the books:</h2>
+                <ul id="book-list">
+                    <!-- Book list will be populated here -->
+                </ul>
+            </div>
+            <div id="forms-container">
+                <div>
+                    <form id="book-form">
+                        <h2>Add a new book</h2>
+                        <input type="text" id="book-title" placeholder="Book Title">
+                        <input type="text" id="book-author" placeholder="Author">
+                        <input type="text" id="book-genre" placeholder="Genre">
+                        <input type="text" id="book-rating" placeholder="Rating">
+        
+                        <button id="add-btn">Add Book</button>
+                    </form>
+                </div>
+                <div class="filter-container">
+                    <h2>Filter Books</h2>
+                    <input type="text" id="title" name="title" placeholder="Filter by title" oninput="handleFilterChange(event)">
+                    <input type="text" id="author" name="author" placeholder="Filter by author" oninput="handleFilterChange(event)">
+                    <input type="text" id="genre" name="genre" placeholder="Filter by genre" oninput="handleFilterChange(event)">
+                    <input type="text" id="rating" name="rating" placeholder="Filter by rating" oninput="handleFilterChange(event)">
+                    <div id="filter-buttons">
+                        <button id="apply-filter">Filter</button>
+                        <button id="clear-fields">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div id="chatbot-container">
+                <div id="chat-history"></div>
+                <input type="text" id="chat-input" placeholder="Ask the  AI chatbot...">
+                <button id="send-btn">Send</button>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
