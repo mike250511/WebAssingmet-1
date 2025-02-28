@@ -8,7 +8,7 @@ Go to https://mike250511.github.io/WebAssingmet-1
 ## How to make it run locally
 ```bash
 git clone https://github.com/mike250511/WebAssingmet-1.git
-cd WebAssignment-1
+cd wcag
 python -m http.server
 ```
 
